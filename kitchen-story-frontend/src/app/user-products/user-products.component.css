@@ -1,0 +1,10 @@
+.well {
+    background-color: #80808047;
+    align-self: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.has-error {
+    color:  red;
+    font-weight: 500;
+}

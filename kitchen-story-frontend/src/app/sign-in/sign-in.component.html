@@ -1,0 +1,43 @@
+<h4>Sign In</h4>
+<div class="well well-lg">
+    <form [formGroup]="signInForm" class="form-horizontal" (ngSubmit)="submitForm(signInForm)" novalidate>
+        <div class="form-row">
+                <div class="form-group col-md">
+                  <label for="email"> Email Id </label>
+                  <input type="email"  class="form-control" formControlName="email" name="email" 
+                  id="email" placeholder="Enter your email" >
+                  <small *ngIf="hasError('email')" [ngClass]="{'has-error' : hasError('email') }" >
+                      <span *ngIf="email.errors.required"> Email is a required field .</span>
+                  </small>
+                </div>
+        </div>
+            <div class="form-row">
+              <div class="form-group col-md">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" formControlName="pass" name="pass" id="pass" 
+                    placeholder="Enter password" >
+                <small *ngIf="hasError('pass')" [ngClass]="{'has-error' : hasError('pass') }" >
+                    <span *ngIf="pass.errors.required"> Password is a required field .</span>
+                </small>
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md">
+                  <label for="role">Login As </label> <br>
+                </div>  
+                <div class="form-group col-md">
+                  <input type="radio" class="form-check-input" formControlName="role" name="role" id="admin" 
+                      value="admin" > <label for="admin">Admin </label>
+                  </div>     
+                  <div class="form-group col-md">
+                      <input type="radio" class="form-check-input" formControlName="role" name="role" id="user" 
+                  value ="user">  <label for="user">User </label> 
+                  <small *ngIf="hasError('role')" [ngClass]="{'has-error' : hasError('role') }" >
+                      <span *ngIf="role.errors.required"> This is a required field .</span>
+                  </small>
+                  </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" >Login</button>
+      </form>
+
+</div>

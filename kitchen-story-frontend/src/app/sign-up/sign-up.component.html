@@ -1,0 +1,55 @@
+<h4>Sign Up</h4>
+<div class="well well-lg">
+    <form [formGroup]="signUpForm" class="form-horizontal" (ngSubmit)="submitForm(signUpForm)" novalidate>
+        <div class="form-row">
+            <div class="form-group col-md">
+                <label for="fname"> First Name </label>
+                <input type="text" class="form-control" formControlName="fname" name="fname"
+                 id="fname" placeholder="Enter First Name" >
+                <small *ngIf="hasError('fname')" [ngClass]="{'has-error' : hasError('fname') }" >
+                    <span *ngIf="fname.errors.required"> First Name is a required field .</span>
+                </small>
+            </div>
+            <div class="form-group col-md">
+                <label for="lname"> Last Name </label>
+                <input type="text" class="form-control" formControlName="lname" name="lname"
+                 id="lname" placeholder="Enter Last Name" >
+                <small *ngIf="hasError('lname')" [ngClass]="{'has-error' : hasError('lname') }" >
+                    <span *ngIf="lname.errors.required"> Last Name is a required field .</span>
+                </small>
+            </div>
+            <div class="form-group col-md">
+                <label for="phone"> Phone Number </label>
+                <input type="text" class="form-control" formControlName="phone" name="phone"
+                 id="phone" placeholder="Enter your phone number" >
+                <small *ngIf="hasError('phone')" [ngClass]="{'has-error' : hasError('phone') }" >
+                    <span *ngIf="phone.errors.required"> Phone number is a required field .</span>
+                    <span *ngIf="phone.errors.minlength"> Phone number should be min 10 characters </span>
+                    <span *ngIf="phone.errors.maxlength"> Phone number can be 10 characters long</span>
+                </small>
+            </div>
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md">
+                <label for="email"> Email Id </label>
+                <input type="email"  class="form-control" formControlName="email" name="email" 
+                id="email" placeholder="Enter your email" >
+                <small *ngIf="hasError('email')" [ngClass]="{'has-error' : hasError('email') }" >
+                    <span *ngIf="email.errors.required"> Email is a required field .</span>
+                </small>
+            </div>
+
+            <div class="form-group col-md">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" formControlName="pass" name="pass" id="pass" 
+                    placeholder="Enter password" >
+                <small *ngIf="hasError('pass')" [ngClass]="{'has-error' : hasError('pass') }" >
+                    <span *ngIf="pass.errors.required"> Password is a required field .</span>
+                </small>
+              </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" >Create Account</button>
+      </form>
+
+</div>

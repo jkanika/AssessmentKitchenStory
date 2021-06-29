@@ -1,0 +1,32 @@
+<h4>Edit - Movie</h4>
+<div class="well well-lg">
+            <label for="id"> Product ID </label> <br>
+            <input type="text" [placeholder]="id" [value] ="id" disabled>
+
+    <form [formGroup]="editForm" class="form-horizontal" (ngSubmit)="submitForm(editForm)" novalidate>
+        <div class="form-row">
+            <div class="form-group col-md">
+                <label for="name"> Movie Name </label>
+                <input type="text" class="form-control" formControlName="name" name="name"
+                 id="name" placeholder="Enter product name" >
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md">
+                <label for="cuisine"> Product Cuisine </label>
+                <input type="text"  class="form-control" formControlName="cuisine" name="cuisine" 
+                id="cuisine" placeholder="Enter cuisine" >
+            </div>
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md">
+                <label for="price">Product Price</label>
+                <input type="text" class="form-control" formControlName="price" name="price" id="price" 
+                    placeholder="Price" >
+              </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+      </form>
+
+</div>

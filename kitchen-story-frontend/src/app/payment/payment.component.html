@@ -1,0 +1,52 @@
+<div class="well well-lg">
+
+    <h3> Payment Gateway </h3>
+
+    <div class="form-row">
+        <div class="form-group col-md">
+            <label for="tamount"> Total Payment Amount </label> <br>
+            <input type="text" [placeholder]="amount" disabled>
+        </div>
+    </div>
+    <div>
+        <form [formGroup]="paymentForm" class="form-horizontal" (ngSubmit)="submitForm(paymentForm)" novalidate>
+            
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="cardno"> Card Number </label>
+                    <input type="text" class="form-control" formControlName="cardno" name="cardno"
+                     id="cardno" placeholder="Card Number" >
+                    <small *ngIf="hasError('cardno')" [ngClass]="{'has-error' : hasError('cardno') }" >
+                        <span *ngIf="cardno.errors.required"> Card Number is a required field .</span>
+                        <span *ngIf="cardno.errors.minlength"> Card Number is  min 16 char long .</span>
+                        <span *ngIf="cardno.errors.maxlength"> Card Number is  max 16 char long .</span>
+                    </small>
+                </div>
+            </div>
+            <div class="form-row">
+    
+                <div class="form-group col-md">
+                    <label for="cardex"> Card Expiry </label>
+                    <input type="cardex"  class="form-control" formControlName="cardex" name="cardex" 
+                    id="cardex" placeholder="Card Expiry" >
+                    <small *ngIf="hasError('cardex')" [ngClass]="{'has-error' : hasError('cardex') }" >
+                        <span *ngIf="cardex.errors.required"> Card expiry is a required field .</span>
+                    </small>
+                </div>
+    
+                <div class="form-group col-md">
+                    <label for="cvv">CVV</label>
+                    <input type="password" class="form-control" formControlName="cvv" name="cvv" id="cvv" 
+                        placeholder="Enter cvv" >
+                    <small *ngIf="hasError('cvv')" [ngClass]="{'has-error' : hasError('cvv') }" >
+                        <span *ngIf="cvv.errors.required"> CVV is a required field .</span>
+                        <span *ngIf="cardno.errors.minlength"> CVV is  min 3 char long .</span>
+                        <span *ngIf="cardno.errors.maxlength"> CVV is  max 3 char long .</span>
+                    </small>
+                  </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" >Confirm Payment</button>
+          </form>
+    
+    </div>
+</div>

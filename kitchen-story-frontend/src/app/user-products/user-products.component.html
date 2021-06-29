@@ -1,0 +1,23 @@
+<h4>Movies list </h4>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Cuisine</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.name}}</td>
+      <td>{{p.cuisine}}</td>
+      <td>{{p.price}}</td>
+      <td>
+          <button (click)="book(p.id)">Order Now</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

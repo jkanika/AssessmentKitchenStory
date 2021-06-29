@@ -1,0 +1,22 @@
+<h4>Order list </h4>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#Id</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Movie Id</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date purchased</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of orders">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.movieid}}</td>
+      <td>{{p.userid}}</td>
+      <td>{{p.amount}}</td>
+      <td>{{p.date}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,25 @@
+<h4>Movies </h4>
+<button style="float:right"  (click)="create()">create</button>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Cuisine</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.name}}</td>
+      <td>{{p.cuisine}}</td>
+      <td>{{p.price}}</td>
+      <td>
+          <button (click)="delete(p.id, p.name)">delete</button>
+          <button (click)="edit(p.id)">edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
